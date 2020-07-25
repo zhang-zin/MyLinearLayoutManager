@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * @author 79810
+ * 处理左右滑动事件
  */
 public class SlideCallback extends ItemTouchHelper.SimpleCallback {
 
@@ -38,6 +39,7 @@ public class SlideCallback extends ItemTouchHelper.SimpleCallback {
 
     /**
      * 滑动
+     * 滑出去的view，移除list并且添加到一个的位置
      */
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
