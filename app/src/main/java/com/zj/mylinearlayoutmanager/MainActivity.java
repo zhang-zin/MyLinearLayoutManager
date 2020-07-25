@@ -1,6 +1,7 @@
 package com.zj.mylinearlayoutmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
         };
         rv.setAdapter(adapter);
         CardConfig.initConfig(this);
+
+        SlideCallback slideCallback = new SlideCallback(rv, adapter, mData);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(slideCallback);
+        itemTouchHelper.attachToRecyclerView(rv);
     }
 }
